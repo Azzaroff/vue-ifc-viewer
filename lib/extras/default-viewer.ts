@@ -54,7 +54,7 @@ export const defaultViewerSetup: ViewerSetup = async (viewer: OBC.Components, co
 
   let lowestModelCoordinate = 0
   ifcLoader.onIfcLoaded.add(model => {
-    highlighter.update()
+    highlighter.updateHighlight()
     for (const fragment of model.items) { culler.add(fragment.mesh) }
     fragmentBB.reset()
     fragmentBB.add(model)
